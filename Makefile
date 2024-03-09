@@ -8,3 +8,8 @@ run: build
 
 test:
 	@go test -v -cover ./test/...
+
+build-tool:
+	@go build -o bin/tool tool/msgpack.go
+run-tool:
+	@./bin/tool

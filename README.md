@@ -17,6 +17,45 @@ repo <- service -> serializer -> http
 
 ## component diagram
 
-https://drive.google.com/file/d/1xxZfxQiSLlY35q16BqwY1CJlu20gsbzs/view?usp=sharing
+![](./hexagonal-component%20diagram.drawio.png)
 
 
+## setup storage environment
+
+### start redis
+```sh
+cd docker
+
+docker compose up -d redis
+```
+### start mongo
+```sh
+cd docker
+
+docker compose up -d mongo
+```
+
+## run up service
+
+### run up with redis
+
+```sh
+export URL_DB=redis
+export REDIS_URL=redis://localhost:6379
+make run
+```
+### run up with mongodb
+
+```sh
+export MONGO_URL=mongodb://localhost:27017/shortener
+export MONGO_DB=shortener
+export MONGO_TIMEOUT=30
+export URL_DB=mongo
+make run
+```
+
+## test with msgpack
+
+```sh
+make run-tool
+```

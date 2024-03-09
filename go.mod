@@ -3,6 +3,8 @@ module github.com/leetcode-golang-classroom/golang-url-shorter
 go 1.20
 
 require (
+	github.com/go-chi/chi v1.5.5 // indirect
+	github.com/go-chi/chi/v5 v5.0.12 // indirect
 	github.com/go-redis/redis v6.15.9+incompatible // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.1 // indirect
